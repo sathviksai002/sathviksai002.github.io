@@ -16,7 +16,7 @@ body{
 #header{ 
     width: 100%;
     height: 100vh;
-    background-image: url(images/background.png);
+    background-image: url(https://camo.githubusercontent.com/683e2187241c641430216c864ce93fc5a0e0dfb232c5a01d1c54b54d63aa8cb2/68747470733a2f2f63646e2e6472696262626c652e636f6d2f75736572732f313136323037372f73637265656e73686f74732f333834383931342f70726f6772616d6d65722e676966);
     background-size: cover;
     background-position: center;
 }
@@ -33,7 +33,7 @@ nav{
 }
 
 .logo{
-    width: 140px;
+    width: 160px;
 }
 
 nav ul li{
@@ -43,7 +43,7 @@ nav ul li{
 }
 
 nav ul li a{
-    color: #fff;
+    color: black;
     text-decoration: solid;
     font-size: 19px;
     position: relative;
@@ -70,11 +70,13 @@ nav ul li a:hover::after{
 }
 
 .header-text h1{
+    color :black;
     font-size: 60px;
     margin-top: 20px;
 }
 
 .header-text p{
+    color :olive;
     font-size: 23px;
 }
 
