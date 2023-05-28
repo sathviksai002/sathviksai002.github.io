@@ -18,13 +18,15 @@
      <div class="container">
       <nav>
         <img src = "images/logo.png" class = "logo">
-        <ul>
-          <li><a href = "#" >Home</a></li>
-          <li><a href = "#" >About</a></li>
-          <li><a href = "#" >Projects</a></li>
-          <li><a href = "#" >Achievements</a></li>
-          <li><a href = "#" >Contact</a></li>
+        <ul id = "sidemenu">
+          <li><a href = "#header" >Home</a></li>
+          <li><a href = "#about" >About</a></li>
+          <li><a href = "#services" >Projects</a></li>
+          <li><a href = "#portfolio" >Achievements</a></li>
+          <li><a href = "#contact" >Contact</a></li>
+          <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
         </ul>
+        <i class="fa-solid fa-bars" onclick="openmenu()"></i>
       </nav>
       <div class="header-text">
         <p>
@@ -105,14 +107,14 @@
             The objective of this project is to develop a general-purpose e-commerce store for admin side
 dashboard where the admin can check, modify and update the details of any product that can be bought from the the comfort
 of home through the Internet</p>
-<a href="#">Learn More</a>
+<a href="https://github.com/sathviksai002/e-commerce">Learn More</a>
         </div>
         <div>
           <i class="fa-solid fa-magnifying-glass-chart"></i>
           <h2>Sentimental Analysis of User Comments On YouTube Video</h2><p> Our Model analyses
             the comments whether they are positive, negative, or neutral, and gives an overall feedback on the YouTube video. with 94%
             We are using two models to analyze the sentiment. i.e. VADER & TEXT BLOB</p>
-<a href="#">Learn More</a>
+<a href="https://github.com/sathviksai002/Sentimental-Analysis-of-User-Comments-On-YouTube-Video">Learn More</a>
         </div>
         <div>
           <i class="fa-solid fa-magnifying-glass-chart"></i>
@@ -120,7 +122,7 @@ of home through the Internet</p>
             Based on all the tweets we could derive a
 final graph whether Trump or Biden is going to win US presidential elections hypothetically according to people’s views and
 thoughts</p>
-<a href="#">Learn More</a>
+<a href="https://github.com/sathviksai002/Twitter_Sentiment_Analysis">Learn More</a>
         </div>
         <div>
           <i class="fa-solid fa-code"></i>
@@ -132,7 +134,7 @@ thoughts</p>
           <i class="fa-solid fa-code"></i>
           <h2>PortFolio</h2><p>
            I designed my portfolio with HTML, CSS AND Javascript</p>
-<a href="#">Learn More</a>
+<a href="https://sathviksai002.github.io/">Learn More</a>
         </div>
       </div>
     </div>
@@ -196,12 +198,13 @@ thoughts</p>
       <a href="images/T_Venkata_Sai_Sathvik_Resume.pdf" download class = "btn btn2">Download CV/RESUME</a>
     </div>
     <div class="contact-right">
-      <form>
+      <form name ="submit-to-google-sheet">
         <input type="text" name = "Name" placeholder="Your Name" required>
         <input type="email" name = "email" placeholder = "Your Email" required>
         <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
         <button type = "submit" class = "btn btn2">Submit</button>
       </form>
+      <span id ="msg"></span>
     </div>
   </div>
 </div>
@@ -226,6 +229,36 @@ thoughts</p>
     event.currentTarget.classList.add("active-link");
     document.getElementById(tabname).classList.add("active-tab");
   }
+</script>
+<script>
+
+  var sidemenu = document.getElementById("sidemenu");
+
+  function openmenu(){
+    sidemenu.style.right = "0";
+  }
+  function closemenu(){
+    sidemenu.style.right = "-200px";
+  }
+</script>
+
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxX8XUOcaUGwXWlJFOWKCFKqBS1KOb08HbfDtMqOcMtFE4MO2uRDRgmX0I6WvMBv_Eb/exec'
+  const form = document.forms['submit-to-google-sheet']
+  const msg = document.getElementById("msg")
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+        msg.innerHTML= "Message has been sent to the owner!"
+        setTimeout(function(){
+          msg.innerHTML = "";
+        },5000)
+        form.reset()
+      })
+      .catch(error => console.error('Error!', error.message))
+  })
 </script>
   </body>
 </html>
