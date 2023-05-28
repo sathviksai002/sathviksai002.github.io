@@ -20,7 +20,6 @@
         <ul>
           <li><a href = "#" >Home</a></li>
           <li><a href = "#" >About</a></li>
-          <li><a href = "#" >Education</a></li>
           <li><a href = "#" >Projects</a></li>
           <li><a href = "#" >Achievements</a></li>
         </ul>
@@ -52,12 +51,58 @@
             find creating value for people and impacting the world through my work gratifying. I want to 
             pursue a career in data science or in software development.
           </p>
+
+          <div class="tab-titles">
+            <p class = "tab-links active-link" onclick = "opentab('skills')"> Skills </p>
+            <p class = "tab-links" onclick = "opentab('experience')"> Experience </p>
+            <p class = "tab-links" onclick = "opentab('education')"> Education </p>
+          </div>
+          <div class="tab-contents active-tab"  id = "skills">
+            <ul>
+              <li>
+                <span>C/C++</span><br> Competitive programming and real world applications programming.</li>
+                <li><span>Python</span><br> Competitive programming.</li>
+                <li><span>Web development/HTML/CSS/REACT</span><br> Designing web interfaces and web packs.</li>
+                <li><span>MYSQL</span><br> Work on queries and advanced nested queries</li>
+                <li><span>Data Science tools</span><br>Design data visualisation interfaces,analysing the data,  preprocessing and data pipeline designing</li>
+
+            </ul>
+          </div>
+          <div class="tab-contents" id = "experience">
+            <ul>
+              <li><span>May 2022-July 2022</span><br>Gemini Consulting and Services Pvt Ltd(Full-time).</li>
+              <li> Frontend Development: HTML, CSS, Javascript, and JQuery</li>
+              <li>Backend Connection: MySQL using Xampp Admin</li>
+              <li> Admin Dashboard: Implemented an admin dashboard using AdminLTE for the admin login for CRUD</li>
+            </ul>
+          </div>
+          <div class="tab-contents" id = "education">
+            <ul>
+              <li>
+                <span>2020-2024 - Present </span><br>KL University Hyderabad - 9.55* CGPA</li>
+                <li><span>2018-2020</span><br>Narayana Junior College- 964/1000 </li>
+                <li><span>2018</span><br>Narayana E-techno School - 9.2 CGPA </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
   </div>
     
 
-
+<script>
+  var tablinks = document.getElementsByClassName("tab-links");
+  var tabcontents = document.getElementsByClassName("tab-contents");
+  function opentab(tabname){
+    for(tablink of tablinks){
+      tablink.classList.remove("active-link");
+    }
+    for(tabcontent of tabcontents){
+      tabcontent.classList.remove("active-tab");
+    }
+    event.currentTarget.classList.add("active-link");
+    document.getElementById(tabname).classList.add("active-tab");
+  }
+</script>
   </body>
 </html>
